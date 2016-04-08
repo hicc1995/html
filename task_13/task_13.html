@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task_13</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<label for="haha">请输入今天你的心情~</label>
+<input type="text" id="text" name="haha" />
+<button id="button">确认</button>
+<div>您输入的值是：<span id="content">米有值</span></div>
+<script type="text/javascript">
+//在标签中加入onclick事件；
+function biubiu(){
+	var sayhi = document.getElementById("text");
+	var con = document.getElementById("content");
+	if(sayhi.value){
+
+		// value.appendChild(sayhi);
+		con.innerText = sayhi.value;
+	}
+	else alert("你米有输入值耶~");
+}
+
+	var on = document.getElementById("button");
+	on.addEventListener("click",biubiu,false);
+	// on.removeEventListener("click",biubiu,false);
+
+// (function(){
+// 	var on = document.getElementById("button");
+// 	on.onclick =  function(){
+// 		var sayhi = document.getElementById("text");
+// 		var con = document.getElementById("content");
+// 		if(sayhi.value){
+// 			con.innerText = sayhi.value;
+// 		}
+// 		else alert("你米有输入值耶~");
+// 	}
+// })()
+</script>
+</body>
+</html>
