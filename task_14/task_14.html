@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task_14</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<h3>污染城市列表</h3>
+<ul id="aqi-list">
+<!-- 	<li>第一名：西安</li>
+	<li>第二名：北京</li> -->
+</ul>
+<script type="text/javascript">
+	var aqdDate = [
+		["北京",90],
+		["上海",50],
+		["福州",10],
+		["广州",90],
+		["西安",100],
+	];
+	(function(){
+		// 遍历aqDate中个各城市数据，将空气质量指数大于60的城市显示到aqi-list的列表中
+		aqdDate.sort(function(a,b){
+			return b[1] - a[1];
+		})//二维数组排序,升序。
+		// console.log(aqdDate);
+		var ull = document.getElementById("aqi-list");
+		var j = 0;
+		for(var i = 0;i<aqdDate.length;i++){
+			var lii = document.createElement("li");
+			if(aqdDate[i][1] >= 60){
+				lii.innerHTML = '第' + (++j) + '名:' + aqdDate[i][0] + "," + aqdDate[i][1];
+				ull.appendChild(lii);
+			}
+		}
+	})()
+</script>
+</body>
+</html>
